@@ -8,15 +8,25 @@ pkgdesc="3D wayland compositor"
 arch=('x86_64')
 url="https://github.com/WayfireWM/wayfire"
 license=(MIT)
-depends=('cairo' 'pango' 'libdrm' 'libevdev'
-         'libglvnd' 'libinput' 'libjpeg'
-         'libpng' 'libxkbcommon' 'pixman' 'polkit'
-         'seatd' 'xcb-util-errors' 'xcb-util-renderutil'
-         'xcb-util-wm' 'xorg-xwayland' 'wayland'
-         'libdisplay-info' 'wf-config-git')
-makedepends=('git' 'glslang' 'meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest' 'pkgconf' 'wayland-protocols'
-             'nlohmann-json' 'libxml2' 'glm'
-           )
+depends=(
+         # Wayfire
+         'cairo' 'pango' 'libdrm' 'libevdev'
+         'libglvnd' 'libjpeg' 'libpng'
+         'libxkbcommon' 'pixman' 'polkit'
+         'seatd' 'xorg-xwayland' 'wayland'
+         'wf-config-git'
+
+         # wlroots
+         'glslang' 'libinput' 'libdisplay-info'
+         'libliftoff' 'libxcb' 'opengl-driver'
+         'xcb-util-errors' 'xcb-util-renderutil'
+         'xcb-util-wm' 'libpixman-1.so' 'libseat.so'
+         'libudev.so' 'libvulkan.so' 'libwayland-client.so'
+         'libwayland-server.so' 'libxkbcommon.so'
+)
+makedepends=('git' 'meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
+             'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2' 'glm'
+)
 optdepends=('xorg-xeyes')
 provides=("${pkgname%-git}" 'wlroots' 'wlroots-git' 'libwlroots.so')
 conflicts=("${pkgname%-git}" 'wlroots-git')
