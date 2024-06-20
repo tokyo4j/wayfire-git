@@ -37,9 +37,9 @@ source=('git+https://github.com/WayfireWM/wayfire')
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/wayfire"
-  tag=$(git tag -l | awk '/^[0-9.]+$/ {print $0} /^v{1}[0-9.]+$/ {print substr($0,2)}'|sort -n|tail -n1)
-  printf "$tag.r%s.g%s" "$(git rev-list --count v${tag}..HEAD)" "$(git rev-parse --short HEAD)"
+    cd "$srcdir/wayfire"
+    tag=$(git tag -l | awk '/^[0-9.]+$/ {print $0} /^v{1}[0-9.]+$/ {print substr($0,2)}'|sort -n|tail -n1)
+    printf "$tag.r%s.g%s" "$(git rev-list --count v${tag}..HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
