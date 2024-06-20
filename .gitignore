@@ -1,0 +1,5 @@
+/src/
+/pkg/
+/wayfire/
+/*.log
+/*.pkg.tar*
