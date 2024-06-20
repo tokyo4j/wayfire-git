@@ -54,6 +54,8 @@ pkgbase = wayfire-git
 	conflicts = wayfire
 	conflicts = wlroots-git
 	source = git+https://github.com/WayfireWM/wayfire
+	source = 4697.patch
 	sha256sums = SKIP
+	sha256sums = d652c61902fb3cafa82a311274044d088a226ac60cc30f79b9f432c904794008
 
 pkgname = wayfire-git

@@ -33,13 +33,22 @@ conflicts=("${pkgname%-git}" 'wlroots-git')
 replaces=()
 options=()
 
-source=('git+https://github.com/WayfireWM/wayfire')
-sha256sums=('SKIP')
+source=('git+https://github.com/WayfireWM/wayfire'
+        '4697.patch')
+sha256sums=('SKIP'
+            'd652c61902fb3cafa82a311274044d088a226ac60cc30f79b9f432c904794008')
 
 pkgver() {
     cd "$srcdir/wayfire"
     tag=$(git tag -l | awk '/^[0-9.]+$/ {print $0} /^v{1}[0-9.]+$/ {print substr($0,2)}'|sort -n|tail -n1)
     printf "$tag.r%s.g%s" "$(git rev-list --count v${tag}..HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    cd "$srcdir/wayfire"
+    git submodule update --init --recursive
+    cd "$srcdir/wayfire/subprojects/wlroots"
+    patch -Np1 -i "$srcdir/4697.patch"
 }
 
 build() {
