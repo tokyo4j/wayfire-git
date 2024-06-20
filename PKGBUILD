@@ -1,5 +1,6 @@
 # Maintainer: Solomon Choina <shlomochoina@gmail.com>
 # Co-Maintainer: Frank Tao <frank.tao@uwaterloo.ca>
+# Co-Maintainer: Christopher Snowhill <kode54@gmail.com>
 pkgname=wayfire-git
 pkgver=0.8.0.r102.g906a3105
 pkgrel=1
