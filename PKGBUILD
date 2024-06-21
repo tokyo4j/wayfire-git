@@ -3,7 +3,7 @@
 # Co-Maintainer: Christopher Snowhill <kode54@gmail.com>
 pkgname=wayfire-git
 pkgver=0.8.1.r313.gfc6bb25d
-pkgrel=1
+pkgrel=2
 pkgdesc="3D wayland compositor"
 arch=('x86_64')
 url="https://github.com/WayfireWM/wayfire"
@@ -61,8 +61,8 @@ build() {
         -Db_lto=true \
         -Db_pie=true \
         build
-    ninja -C build
     sed "/WF_SRC_DIR/d" -i build/config.h
+    ninja -C build
 }
 
 
