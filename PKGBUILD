@@ -16,6 +16,9 @@ depends=(
          'seatd' 'xorg-xwayland' 'wayland'
          'wf-config-git'
 
+         # Linking Wayfire headers now requires this
+         'glm'
+
          # wlroots
          'glslang' 'libinput' 'libdisplay-info'
          'libxcb' 'opengl-driver'
@@ -25,7 +28,7 @@ depends=(
          'libwayland-server.so' 'libxkbcommon.so'
 )
 makedepends=('git' 'meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
-             'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2' 'glm'
+             'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2'
 )
 optdepends=('xorg-xeyes')
 provides=("${pkgname%-git}" 'wlroots' 'wlroots-git' 'libwlroots.so')
