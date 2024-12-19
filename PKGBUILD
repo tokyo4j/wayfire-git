@@ -20,8 +20,8 @@ depends=(
          'glm'
 
          # wlroots
-         'glslang' 'libinput' 'libdisplay-info'
-         'libxcb' 'opengl-driver'
+         'glslang' 'lcms2' 'libinput' 'libdisplay-info'
+         'libliftoff' 'libxcb' 'opengl-driver'
          'xcb-util-errors' 'xcb-util-renderutil'
          'xcb-util-wm' 'libpixman-1.so' 'libseat.so'
          'libudev.so' 'libvulkan.so' 'libwayland-client.so'
