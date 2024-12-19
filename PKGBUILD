@@ -1,6 +1,8 @@
 # Maintainer: Solomon Choina <shlomochoina@gmail.com>
 # Co-Maintainer: Frank Tao <frank.tao@uwaterloo.ca>
 # Co-Maintainer: Christopher Snowhill <kode54@gmail.com>
+_wlroots_version=0.18.2
+_wlroots_majver=0.18
 pkgname=wayfire-git
 pkgver=0.9.0.r11.g6796b085
 pkgrel=1
@@ -31,8 +33,8 @@ makedepends=('git' 'meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
              'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2'
 )
 optdepends=('xorg-xeyes')
-provides=("${pkgname%-git}" 'wlroots' 'wlroots-git' 'libwlroots.so')
-conflicts=("${pkgname%-git}" 'wlroots-git')
+provides=("${pkgname%-git}" "wlroots=${_wlroots_version}" "libwlroots-${_wlroots_majver}.so")
+conflicts=("${pkgname%-git}")
 replaces=()
 options=()
 

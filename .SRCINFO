@@ -49,11 +49,9 @@ pkgbase = wayfire-git
 	depends = libxkbcommon.so
 	optdepends = xorg-xeyes
 	provides = wayfire
-	provides = wlroots
-	provides = wlroots-git
-	provides = libwlroots.so
+	provides = wlroots=0.18.2
+	provides = libwlroots-0.18.so
 	conflicts = wayfire
-	conflicts = wlroots-git
 	source = git+https://github.com/WayfireWM/wayfire
 	sha256sums = SKIP
 
