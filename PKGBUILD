@@ -4,7 +4,7 @@
 _wlroots_version=0.18.2
 _wlroots_majver=0.18
 pkgname=wayfire-git
-pkgver=0.9.0.r23.g0f9d50d1
+pkgver=0.9.0.r30.gfdadd856
 pkgrel=1
 pkgdesc="3D wayland compositor"
 arch=('x86_64')
@@ -22,18 +22,13 @@ depends=(
          'glm'
 
          # wlroots
-         'glslang' 'lcms2' 'libinput' 'libdisplay-info'
-         'libliftoff' 'libxcb' 'opengl-driver'
-         'xcb-util-errors' 'xcb-util-renderutil'
-         'xcb-util-wm' 'libpixman-1.so' 'libseat.so'
-         'libudev.so' 'libvulkan.so' 'libwayland-client.so'
-         'libwayland-server.so' 'libxkbcommon.so'
+         'libwlroots-0.18.so'
 )
 makedepends=('git' 'meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
              'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2'
 )
 optdepends=('xorg-xeyes')
-provides=("${pkgname%-git}" "wlroots=${_wlroots_version}" "libwlroots-${_wlroots_majver}.so")
+provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 replaces=()
 options=()
@@ -52,7 +47,7 @@ build() {
     arch-meson \
         --buildtype=release \
         -Dxwayland=auto \
-        -Duse_system_wlroots=disabled \
+        -Duse_system_wlroots=enabled \
         -Duse_system_wfconfig=enabled \
         -Db_lto=true \
         -Db_pie=true \
